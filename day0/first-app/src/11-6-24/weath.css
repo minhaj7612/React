@@ -1,0 +1,73 @@
+.dtlBox{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+}
+table{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+table thead tr th{
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 12px;
+}
+table tbody tr td{
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10 px;
+}
+table{
+    width: 100%;
+}
+.temp{
+    padding-left: 43px;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    position: relative;
+}
+.celc{
+    font-size: 10rem;
+    margin: 0;
+}
+.sky_weather{
+    position: absolute;
+    left: 79px;
+    bottom: 178px;
+    font-size: 31px;
+    display: flex;
+    gap: 30px;
+}
+.Location h2{
+    justify-content: left;
+    display: flex;
+    width: 87%;
+    margin: 0 auto;
+    padding-top: 50px;
+
+}
+.degrCelc span{
+    font-size: 74px;
+    color: gray;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.inpt input{
+    width: 315px;
+    height: 30px;
+}
+.inpt button{
+border: none;
+padding: 11px;
+background: cadetblue;
+}
+.Main_table{
+    background-color: rgb(128, 119, 119);
+}
