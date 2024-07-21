@@ -9,6 +9,7 @@ import CounterProvider from './Context/Counter.Contex';
 import MyContext from './Context/Authcontext';
 import ThemeContextProvide from "./Context/theme"
 import store from './redux/store';
+import MyAdminContext from "./Context/AdminAuthContext"
 import {Provider} from "react-redux"
 
 
@@ -45,7 +46,9 @@ root.render(
       <MyContext>
      <CounterProvider>
       <Provider store={store}>
-      <App/>
+        <MyAdminContext>
+        <App/>
+        </MyAdminContext>
       </Provider>
      </CounterProvider> 
     </MyContext>
