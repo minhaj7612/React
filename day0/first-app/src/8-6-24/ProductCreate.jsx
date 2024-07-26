@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Api from "../AxiosConfigue";
+import { Authcontext } from "../Context/Authcontext";
+import { useContext } from "react";
 
 
 const ProductCreate = () => {
+    const{state,dispatch}=useContext(Authcontext)
+    console.log(state,"stateinaddProduct")
     const [disable, setDisable] = useState(true);
     const router = useNavigate();
     const [productData, setProductData] = useState({
@@ -59,6 +63,15 @@ const ProductCreate = () => {
         toast.error(error.response.data.error);
       }
     }
+
+    useEffect(()=>{
+      if(state?.user && state?.user?.role !== "admin"){
+        toast.error("Only admin is allow to acces this Page")
+        router("/adminLogin")
+      }
+    },[state])
+  
+    
   
   
   
@@ -82,7 +95,7 @@ const ProductCreate = () => {
             value={productData.price}
           />
           <br />
-          <label>Category : </label>
+          <label>Category:</label>
           <input
             type="text"
             onChange={handleChange}

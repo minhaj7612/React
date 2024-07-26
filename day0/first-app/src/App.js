@@ -35,12 +35,14 @@ import AdminLogin from "./8-6-24/AdminLogin";
 import AdminRegister from "./8-6-24/AdminRegister";
 import ProductCreate from "./8-6-24/ProductCreate";
 import GetCurrentproduct from "./8-6-24/GetCurrentproduct";
+import Navbar from "./14-7-24/Navbar";
 
 
 function App() {
   return (
-
+  
    <div className="App">
+     <Navbar/>
     <Routes>
     <Route path="/" element={<TodoPracticeSecond/>}/> 
     <Route path="/Contact" element={<Contact/>}/>

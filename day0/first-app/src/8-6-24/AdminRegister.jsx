@@ -35,10 +35,11 @@ async function handleSubmit(e){
 }
   return (
     <div>
-      Admin Register
+   
         <form onSubmit={handleSubmit} action="">
+        <h2>Admin Register</h2>
             <input type="text" placeholder='name' name='name' value={adminData.name} onChange={handleChange}/>
-            <br />
+            <br /> 
             <input type="email"  placeholder='email' name='email'  value={adminData.email} onChange={handleChange}/>
             <br />
             <input type="password" placeholder='password' name="password" value={adminData.password} onChange={handleChange}/>

@@ -1,13 +1,13 @@
 import React, { useState,useContext } from 'react';
 import toast from 'react-hot-toast';
 import Api from '../AxiosConfigue';
-import { AdminContext } from '../Context/AdminAuthContext';
+import { Authcontext } from '../Context/Authcontext';
 import { useNavigate } from "react-router-dom";
 
 function AdminLogin() {
-  const {state,dispatch} = useContext(AdminContext);
+  const {state,dispatch} = useContext(Authcontext);
   const navigate = useNavigate();
-  const [adminData, setAdminData] = useState({ email: "", password: "" });
+  const [adminData, setAdminData] = useState({ email:"", password:"" });
 
   const handleChange = (event) => {
     setAdminData({ ...adminData, [event.target.name]: event.target.value });
@@ -17,10 +17,10 @@ function AdminLogin() {
     e.preventDefault();
     try {
       if (adminData.email && adminData.password) {
-        const response = await Api.post("/admin/login-admin", { adminData });
+        const response = await Api.post("/admin/login-admin",{adminData});
 
         if (response.data.success) {
-          dispatch({type:"ADMIN LOGIN",payload:response.data.adminData})
+          dispatch({type:"LOGIN", payload:response.data.adminData})
           setAdminData({ email: "", password: "" });
           toast.success(response.data.message);
           navigate("/newhome");

@@ -54,14 +54,18 @@ function Login() {
       }
     }
   return (
-    <div>
+    <div style={{margin:"100px"}}>
         <form onSubmit={handlesubmit}>
          <input type="email" onChange={handlechng}  name="email" value={userData.email}  />
          <br />
          <input type="password" onChange={handlechng}  name="password" value={userData.password}/>
          <br />
          <button>submit</button>
+         <br/>
         </form>
+        <button onClick={()=>route("/register")}>Register</button>
+       <button onClick={()=>route("/adminLogin")}>Admin Login</button>
+      <button onClick={()=>route("/adminRegister")}>Admin Register</button>
     </div>
   )
 }
