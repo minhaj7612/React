@@ -8,6 +8,7 @@ import { useContext } from "react";
 
 const ProductCreate = () => {
     const{state,dispatch}=useContext(Authcontext)
+    
     console.log(state,"stateinaddProduct")
     const [disable, setDisable] = useState(true);
     const router = useNavigate();
@@ -37,7 +38,10 @@ const ProductCreate = () => {
           productData.quantity &&
           productData.image
         ) {
-          const response = await Api.post("/product/create-new-product",{productData});
+          const response = await Api.post("/product/create-new-product",{
+            productData,
+            userId:state?.user?.userId
+          });
           // const response = {
           //   data: { success: true, message: "Regsiter successfull." },
           // };

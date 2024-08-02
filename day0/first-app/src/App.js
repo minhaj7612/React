@@ -36,6 +36,10 @@ import AdminRegister from "./8-6-24/AdminRegister";
 import ProductCreate from "./8-6-24/ProductCreate";
 import GetCurrentproduct from "./8-6-24/GetCurrentproduct";
 import Navbar from "./14-7-24/Navbar";
+import AddedProduct from "./8-6-24/AddedProduct";
+import SingleProductpage from "./8-6-24/SingleProductpage";
+import SingleProductPage from "./8-6-24/SingleProductpage";
+import WishListProduct from "./16-7/WishListProduct";
 
 
 function App() {
@@ -44,7 +48,8 @@ function App() {
    <div className="App">
      <Navbar/>
     <Routes>
-    <Route path="/" element={<TodoPracticeSecond/>}/> 
+    <Route path="/" element={<Login/>}></Route>
+    <Route path="/todopract" element={<TodoPracticeSecond/>}/> 
     <Route path="/Contact" element={<Contact/>}/>
     <Route path="/Use-state" element={<Usestate/>}/>
     <Route path="/Use-effect" element={<UseEffect/>}/>
@@ -54,7 +59,6 @@ function App() {
     <Route path="/todo" element={<Todo/>}></Route>
     <Route path="/todoSecond" element={<TodoPrac/>}></Route>
     <Route path="/register" element={<Register/>}></Route>
-    <Route path="/logindetail" element={<Login/>}></Route>
     <Route path="/loading"  element={<Loadin/>}/>
     <Route path="/weather-2" element={<Weather/>}/>
     <Route path="/reducer" element={<Reducer/>}/>
@@ -77,7 +81,10 @@ function App() {
     <Route path="/adminRegister" element={<AdminRegister/>}/>
     <Route path="/adminLogin" element={<AdminLogin/>}/>
     <Route path="/addProduct" element={<ProductCreate/>}/>
+    <Route path="/added-product" element={<AddedProduct/>}/>
     <Route path="/getProduct" element={<GetCurrentproduct/>}/>
+    <Route path="/singleProduct/:id" element={<SingleProductPage/>}/>
+    <Route path="wishlist"     element={<WishListProduct/>}/>
 </Routes> 
    </div>
 

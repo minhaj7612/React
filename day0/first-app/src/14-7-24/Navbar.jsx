@@ -17,7 +17,7 @@ async function LogOut(){
            if(response.data.success){
             dispatch({type:"LOGOUT",payload:null})
             toast.success(response.data.message)
-            route("/logindetail")
+            route("/")
            }else{
             toast.error('Logout failed');
            }
@@ -44,18 +44,27 @@ async function AdminLogout(){
 }
 
   return (
-    <div style={{display:"flex", alignItems:"center", justifyContent:"space-around",border:"1px solid black"}}>
+    <div style={{display:"flex", alignItems:"center",background:"black",color:"white",cursor:"pointer",border:"1px solid black",justifyContent:"space-between",
+      border: "1px solid black",
+      padding: "0px 30px"}}>
+      <div>
       <h2>Logo</h2>
-      <h2>Home</h2>
+      </div>
 
-      {state?.user?.role == "admin" && (<h2 onClick={()=>route("/addProduct")}>Add Product</h2>)} 
+      <div style={{display:"flex",gap:"30px",alignItems:"center"}}>
+      <div onClick={()=>route("/newhome")}>Home</div>
+      {state?.user?.role == "user" && (<div onClick={()=>route("/getProduct")}>All Products</div>)} 
+      {state?.user?.role == "user" && (<div onClick={()=>route("/cart")}>Cart</div>)} 
+      {state?.user?.role == "user" && (<div onClick={()=>route("/wishlist")}>Wish List</div>)} 
+      {state?.user?.role == "admin" && (<div onClick={()=>route("/addProduct")}>Add Product</div>)} 
+      {state?.user?.role == "admin" && (<div onClick={()=>route("/added-product")}>Added Product</div>)} 
       {
         state?.user?(
-          <><h2 onClick={LogOut} className='logout'>LogOut</h2></>
+          <><div onClick={LogOut} className='logout'>LogOut</div></>
         ):
-        (<><h2>Login/Register</h2></> )
+        (<><div>Login/Register</div></> )
       }
-      
+     </div>
       
     </div>
   )

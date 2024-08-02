@@ -33,7 +33,7 @@ function Login() {
       //   }
       //   }
        if(response.data.success){
-         dispatch({type:"LOGIN", payload:response.data.userData})
+         dispatch({type:"LOGIN",payload:response.data.userData})
          setUserData({
            email:"",
            password:"",
@@ -50,11 +50,13 @@ function Login() {
         console.log(error, "error");
       //   console.log(error);
       //   error =  { data : { success : false, message : "Password is invalid."}}
-      toast.error(error?.response?.data?.error)
+      // toast.error(error?.response?.data?.error)
+       toast.error(error?.response?.data?.error || error.message);
       }
     }
   return (
     <div style={{margin:"100px"}}>
+      <h3>User Login</h3>
         <form onSubmit={handlesubmit}>
          <input type="email" onChange={handlechng}  name="email" value={userData.email}  />
          <br />

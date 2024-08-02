@@ -14,12 +14,10 @@ function NewHome() {
     // const { state, dispatch } = useContext(CounterContext);
   
   return (
-         <div style={{background:themeState.theme === "light" ? "blue" :"gray"}}>
-         <h1>Home page -{state?.user?.name}</h1>
+         <div style={{color:"white",height:"100vh",background:themeState.theme === "light" ? "gray" :"black"}}>
+         <h1 style={{margin:"0px"}} >Welcom to home page-{state?.user?.name}</h1>
           
-         <button onClick={()=>route("/logindetail")}>back to login page</button> <br/>
-
-         <button onClick={()=>dispatch({type: themeState?.theme === "light" ? "DARK": "LIGHT"})} >change {themeState.theme ==="light"? "blue" : "dark"} theme</button>
+       <button  style={{margin:"20px"}} onClick={()=>dispatch({type: themeState?.theme === "light" ? "DARK": "LIGHT"})} >change {themeState.theme ==="light"? "gray" : "dark"} theme</button>
          
     </div>
   )
